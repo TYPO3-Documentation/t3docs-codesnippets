@@ -190,7 +190,7 @@ class ClassDocsHelper
         $classBody = rtrim($classBody);
         $classBody = StringHelper::indentMultilineText($classBody, '   ') . "\n";
 
-        $classSignature = self::getClassSignature($class, $withCode);
+        $classSignature = self::getClassSignature($class, $withCode, $classReflection);
 
         return $classSignature . $classBody;
     }
@@ -277,7 +277,7 @@ class ClassDocsHelper
      * @param bool $withCode Include code
      * @return string
      */
-    public static function getClassSignature(string $class, bool $withCode = false): string
+    public static function getClassSignature(string $class, bool $withCode, \ReflectionClass $reflectionClass): string
     {
         $classReflection = self::getClassReflection($class);
 
@@ -300,10 +300,16 @@ class ClassDocsHelper
         $result = [];
         $result[] = sprintf('.. php:namespace::  %s', $namespace);
         $result[] = "\n\n";
-        $result[] = sprintf('.. php:class:: %s', $classShortName);
+        if ($reflectionClass->isInterface()) {
+            $result[] = sprintf('.. php:interface:: %s', $classShortName);
+        } else if ($reflectionClass->isAbstract()) {
+            $result[] = sprintf('.. php:class:: abstract %s', $classShortName);
+        } else {
+            $result[] = sprintf('.. php:class:: %s', $classShortName);
+        }
         $result[] = "\n\n";
         if ($comment) {
-            $result[] = StringHelper::indentMultilineText($comment, '   ') . "\n";
+            $result[] = StringHelper::indentMultilineText($comment, '   ') . "\n\n";
         }
 
         // SplFileObject locks the file, so null it when no longer needed
