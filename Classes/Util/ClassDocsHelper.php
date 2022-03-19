@@ -363,8 +363,11 @@ class ClassDocsHelper
         bool $includeConstructor): string
     {
         $methodReflection = self::getMethodReflection($class, $method);
+        $isInternal = is_string($methodReflection->getDocComment())
+            && str_contains($methodReflection->getDocComment(), '@internal');
+        // For some reason $methodReflection->isInternal() is always false
         if (
-            (!$allowInternal && $methodReflection->isInternal())
+            (!$allowInternal && $isInternal)
             or (!$allowDeprecated && $methodReflection->isDeprecated())
             or (($modifierSum & $methodReflection->getModifiers()) == 0)
             or (!$includeConstructor && $method=='__construct')

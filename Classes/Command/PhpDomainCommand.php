@@ -26,11 +26,10 @@ class PhpDomainCommand extends Command
                 'Enter the fully qualified name of the structure you want to export'
             )
             ->addOption(
-                'brute-force',
-                'b',
+                'include-internal',
+                'i',
                 InputOption::VALUE_OPTIONAL,
-                'Some optional option for your wizard(s). You '
-                . 'can use --brute-force or -b when running command'
+                'Use --include-internal if you want to document internal methods as well.'
             );
     }
 
@@ -47,8 +46,14 @@ class PhpDomainCommand extends Command
         $output = '';
 
         if ($input->getArgument('fullyQuallyfiedName')) {
-            $output = ClassDocsHelper::extractDocsFromClass($input->getArgument('fullyQuallyfiedName'));
-            //$output = $input->getArgument('fullyQuallyfiedName');
+            $includeInternal = (bool)$input->getOption('include-internal');
+            $output = ClassDocsHelper::extractDocsFromClass(
+                $input->getArgument('fullyQuallyfiedName'),
+                [],
+                false,
+                ['public'],
+                $includeInternal
+            );
         } else {
             $output = 'Please enter the fully qualified name of the class or interface you want to document.';
         }
