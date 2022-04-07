@@ -454,7 +454,7 @@ class ClassDocsHelper
             $result[] = implode("\n", $parameterInRst) . "\n";
         }
         if ($returnType && $returnType->getName() != 'void') {
-            $returnPart = sprintf(':returntype: %s', $returnType->getName());
+            $returnPart = sprintf(':returntype: %s', self::escapeClassName($returnType->getName()));
             if ($returnComment) {
                 $returnPart .= "\n" . sprintf(':returns: %s', $returnComment);
             }
@@ -466,6 +466,11 @@ class ClassDocsHelper
         // SplFileObject locks the file, so null it when no longer needed
         $splFileObject = null;
         return $methodHead.$methodBody;
+    }
+
+    private static function escapeClassName(string $class) {
+        return str_replace('\\', '\\\\', $class);
+
     }
 
     protected static function getMethodReflection(string $class, string $method): \ReflectionMethod
