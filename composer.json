@@ -1,0 +1,48 @@
+{
+	"name": "t3docs/codesnippets",
+	"description" : "TYPO3 CMS Base Distribution",
+	"license": "GPL-2.0-or-later",
+	"config": {
+		"allow-plugins": {
+			"typo3/class-alias-loader": true,
+			"typo3/cms-composer-installers": true
+		},
+		"sort-packages": true
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "local_packages/*"
+		}
+	],
+	"require": {
+		"t3docs/restructured-api-tools": "@dev",
+		"typo3/cms-backend": "main-dev",
+		"typo3/cms-belog": "main-dev",
+		"typo3/cms-beuser": "main-dev",
+		"typo3/cms-core": "main-dev",
+		"typo3/cms-dashboard": "main-dev",
+		"typo3/cms-extbase": "main-dev",
+		"typo3/cms-extensionmanager": "main-dev",
+		"typo3/cms-felogin": "main-dev",
+		"typo3/cms-filelist": "main-dev",
+		"typo3/cms-fluid": "main-dev",
+		"typo3/cms-fluid-styled-content": "main-dev",
+		"typo3/cms-form": "main-dev",
+		"typo3/cms-frontend": "main-dev",
+		"typo3/cms-impexp": "main-dev",
+		"typo3/cms-info": "main-dev",
+		"typo3/cms-install": "main-dev",
+		"typo3/cms-linkvalidator": "main-dev",
+		"typo3/cms-recordlist": "main-dev",
+		"typo3/cms-redirects": "main-dev",
+		"typo3/cms-rte-ckeditor": "main-dev",
+		"typo3/cms-seo": "main-dev",
+		"typo3/cms-setup": "main-dev",
+		"typo3/cms-sys-note": "main-dev",
+		"typo3/cms-t3editor": "main-dev",
+		"typo3/cms-tstemplate": "main-dev",
+		"typo3/cms-viewpage": "main-dev",
+		"typo3/cms-workspaces": "main-dev"
+	}
+}
