@@ -37,6 +37,7 @@
 		"typo3/cms-linkvalidator": "main-dev",
 		"typo3/cms-recordlist": "main-dev",
 		"typo3/cms-redirects": "main-dev",
+		"typo3/cms-reports": "main-dev",
 		"typo3/cms-rte-ckeditor": "main-dev",
 		"typo3/cms-seo": "main-dev",
 		"typo3/cms-setup": "main-dev",
