@@ -18,6 +18,7 @@
 	"require": {
 		"t3docs/examples": "main-dev",
 		"t3docs/restructured-api-tools": "@dev",
+		"t3docs/site-package": "dev-main",
 		"typo3/cms-backend": "main-dev",
 		"typo3/cms-belog": "main-dev",
 		"typo3/cms-beuser": "main-dev",
