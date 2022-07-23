@@ -2,6 +2,7 @@
 .idea
 nbproject
 
+/_temp/*
 /var/*
 /vendor
 /public/*
