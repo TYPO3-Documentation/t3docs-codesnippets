@@ -42,7 +42,7 @@ You can run this as CLI command:
 
 .. code-block:: bash
 
-   ddev exec vendor/bin/typo3  restructured_api_tools:php_domain <path to codesnippets.php>
+   ddev exec vendor/bin/typo3  codesnippet:create <path to codesnippets.php>
 
 Example
 =======
@@ -59,4 +59,4 @@ Then run the codesnippets.php:
 .. code-block:: bash
 
    cd ../..
-   ddev exec vendor/bin/typo3  restructured_api_tools:php_domain public/fileadmin/TYPO3CMS-Reference-CoreApi/Documentation/CodeSnippets/
+   ddev exec vendor/bin/typo3  codesnippet:create public/fileadmin/TYPO3CMS-Reference-CoreApi/Documentation/CodeSnippets/
