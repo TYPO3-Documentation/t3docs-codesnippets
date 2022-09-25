@@ -29,7 +29,7 @@
 		"t3docs/codesnippet": "@dev",
 		"t3docs/examples": "dev-main",
 		"t3docs/site-package": "dev-main",
-		"ttn/tea": "12.0-dev-dev",
+		"ttn/tea": "dev-lwolf-v12-compability",
 		"typo3-documentation-team/speeddemo": "^11.4",
 		"typo3/cms-adminpanel": "main-dev",
 		"typo3/cms-backend": "main-dev",
