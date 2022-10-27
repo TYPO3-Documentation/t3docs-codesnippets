@@ -9,27 +9,13 @@
 		},
 		"sort-packages": true
 	},
-    "repositories": {
-        "0_local_packages": {
-            "type": "path",
-            "url": "local_packages/*"
-        },
-        "1a_git": {
-            "type": "vcs",
-            "url": "git@github.com:TYPO3-Documentation/tea.git"
-        },
-        "1c_git": {
-            "type": "vcs",
-            "url": "https://github.com/TYPO3-Documentation/blog_example.git"
-        }
-    },
 	"require": {
-		"friendsoftypo3/blog-example": "dev-12.0-dev",
+		"friendsoftypo3/blog-example": "^12.0",
 		"haydenpierce/class-finder": "^0.4.3",
 		"t3docs/codesnippet": "@dev",
 		"t3docs/examples": "dev-main",
 		"t3docs/site-package": "dev-main",
-		"ttn/tea": "dev-lwolf-v12-compability",
+		"ttn/tea": "^3.0",
 		"typo3-documentation-team/speeddemo": "^11.4",
 		"typo3/cms-adminpanel": "main-dev",
 		"typo3/cms-backend": "main-dev",
